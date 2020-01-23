@@ -7,11 +7,11 @@ Instead of Node.js I will be using Flask to create the web server backend.
 The code in this project is organized as follows:
 
 ````
-- simpleweb
+- 0.web_simple
 ````
  
 
-## Simpleweb
+## Web Simple
 
 Section 4 of the course covers building a single-container docker application that simply prints 'Hi there'.</br>
 Instead of using `Node.js` I used `Flask` to build the application.
