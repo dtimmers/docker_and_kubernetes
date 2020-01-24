@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  redis-server:
+    restart: always
+    image: 'redis'
+  flask-app:
+    restart: on-failure
+    build: .
+    ports:
+      - '8080:5000'
+    environment:
+      - FLASK_APP=index.py
