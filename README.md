@@ -18,7 +18,7 @@ Instead of using `Node.js` I used `Flask` to build the application.
 Run the following command to run the below commands.
 
 ```
-cd simpleweb
+cd 0.web_simple
 docker build -t <image_name> .
 docker run -p 8080:5000 -e FLASK_APP=index.py <image_name>
 ```
