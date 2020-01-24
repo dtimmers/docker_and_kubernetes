@@ -8,7 +8,7 @@ The code in this project is organized as follows:
 
 ````
 - 0.web_simple
-- 1.
+- 1.web_visit_counter
 ````
  
 
