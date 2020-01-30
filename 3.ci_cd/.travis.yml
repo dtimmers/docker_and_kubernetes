@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - cd 3.ci_cd/services/web
+  - docker build -t dennistimmers:ci_cd .
+
+script:
+  - docker run dennistimmers:ci_cd python test/unit_test.py
