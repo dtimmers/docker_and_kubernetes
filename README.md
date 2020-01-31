@@ -41,4 +41,28 @@ To stop the application execute
 ```
 docker-compose down
 ```
+
+## Nginx with Flask integration
+
+Section 6 introduces volumes which allows for quick development because your code changes are immediately visible 
+in the running Docker container. 
+Furthermore, we introduce a production style setup where we integrate Flask with Nginx.
  
+```
+cd 2.nginx_flask_integration/
+docker-compose up -d
+```
+
+You can then browse to <http://127.0.0.1:8080/> where it shows the message from the text file
+
+```
+2.nginx_flask_integration/services/web/message.txt
+```
+
+By editing this file, you can control the text that is displayed on your web browser.</br>
+Simply refresh the browser to see your new message.
+
+To stop the application execute
+```
+docker-compose down
+```
