@@ -9,3 +9,10 @@ RUN pip install --upgrade pip && \
 
 # copy over the flask server definition
 COPY ./ ./
+
+# make sure that port 8080 is accessible
+EXPOSE 80
+
+# start the server
+RUN gunicorn --bind 0.0.0.0:80 index:app
+

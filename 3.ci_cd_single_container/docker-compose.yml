@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    build:
+      context: .
+    volumes:
+      - ./services/web:/usr/app/services/web
+    command: gunicorn --bind 0.0.0.0:8080 index:app
+    expose:
+      - 5000
+    environment:
+      - FLASK_APP=services/index.py
