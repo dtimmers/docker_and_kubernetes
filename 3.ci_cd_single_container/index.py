@@ -8,7 +8,7 @@ def get_message():
     :return: the text from the text file services/message.txt
     """
 
-    with open('services/web/message.txt', 'r') as file:
+    with open('message.txt', 'r') as file:
         msg = ""
         for line in file:
             msg = msg + line + '</br>'

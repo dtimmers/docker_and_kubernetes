@@ -4,7 +4,7 @@ services:
 
 before_install:
   - cd 3.ci_cd_single_container
-  - docker build -t dennistimmers:ci_cd .
+  - docker build -t dennistimmers:ci_cd -f Dockerfile.dev .
 
 script:
   - docker run dennistimmers:ci_cd python test/unit_test.py
