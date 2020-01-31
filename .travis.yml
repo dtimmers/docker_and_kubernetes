@@ -8,3 +8,17 @@ before_install:
 
 script:
   - docker run dennistimmers:ci_cd python test/unit_test.py
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-1'
+  app: 'docker-first-deploy'
+  env: 'DockerFirstDeploy-env'
+  bucket_name: 'elasticbeanstalk-eu-west-1-419908496760'
+  bucket_path: 'docker-first-deploy'
+  on:
+    branch: master
+  access_key_id:
+    secure: $AWS_ACCESS_ID
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
