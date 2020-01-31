@@ -12,12 +12,3 @@ services:
       - 5000
     environment:
       - FLASK_APP=services/index.py
-
-  nginx:
-    restart: always
-    build:
-      context: ./services/nginx
-    ports:
-      - 8080:80
-    depends_on:
-      - web
