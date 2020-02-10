@@ -10,13 +10,4 @@ script:
   - docker run dennistimmers/client_test python test/unit_test.py
 
 after_success:
-  - docker build -t dennistimmers/multi_api ./services/api
-  - docker build -t dennistimmers/multi_client ./services/client
-  - docker build -t dennistimmers/multi_nginx ./services/nginx
-  - docker build -t dennistimmers/multi_worker ./services/worker
-  # log in the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push dennistimmers/multi_api
-  - docker push dennistimmers/multi_client
-  - docker push dennistimmers/multi_nginx
-  - docker push dennistimmers/multi_worker
+  - ./sh/push_images.sh
