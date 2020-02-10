@@ -13,3 +13,8 @@ COPY ./ ./
 # create volume for fast development
 VOLUME ./services/client ./usr/app/
 
+# start Flask server for development
+ENV FLASK_ENV "development"
+ENV FLASK_APP "app_client.py"
+CMD ["flask", "run", "--host", "0.0.0.0"]
+

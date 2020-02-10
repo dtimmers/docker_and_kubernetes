@@ -21,8 +21,8 @@ class FibIndexForm(Form):
         if index_form.validate():
             api_client.insert_index(request.args)
 
-        values_dict = api_client.get_all_values()
-        indices_dict = api_client.get_all_indices()
+        values_dict = api_client.get_all_values() or {}
+        indices_dict = api_client.get_all_indices() or {}
 
         return render_template('index.html',
                                table_indices=parse_indices(indices_dict),
