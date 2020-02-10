@@ -1,0 +1,17 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - cd 4.ci_cd_multi_container
+  - docker build -t dennistimmers/client_test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run dennistimmers/client_test python test/unit_test.py
+
+after_success:
+  - test $TRAVIS_BRANCH = "master"
+  - docker build -t dennistimmers/multi_api ./api
+  - docker build -t dennistimmers/multi_client ./client
+  - docker build -t dennistimmers/multi_nginx ./nginx
+  - docker build -t dennistimmers/multi_worker ./worker
