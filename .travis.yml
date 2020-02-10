@@ -10,7 +10,7 @@ script:
   - docker run dennistimmers/client_test python test/unit_test.py
 
 after_success:
-  - test $TRAVIS_BRANCH = "master"
+  - test $TRAVIS_BRANCH =="master"
   - docker build -t dennistimmers/multi_api ./services/api
   - docker build -t dennistimmers/multi_client ./services/client
   - docker build -t dennistimmers/multi_nginx ./services/nginx
