@@ -66,3 +66,23 @@ To stop the application execute
 ```
 docker-compose down
 ```
+
+## CI/CD for single container applications
+
+In section 7 we cover how to set up an integrated pipeline for deploying a single container application to AWS Elastic Beanstalk.
+The pipeline is created by integrating GitHub with Travis CI and Elastic Beanstalk.
+The application is a simple Flask server that simply displays the content of
+
+```
+3.ci_cd_single_container/message.txt
+```
+
+Any commit on the master branch will trigger Travis CI to first run the unit tests.</br>
+If the unit tests are passed then the Elastic Beanstalk application is updated.
+
+Important: the integration between GitHub and Travis CI is done by placing a '.travis.yml' file in the root directory of the repository.
+The `.travis.yml` file for this application can be found in
+
+```
+3.ci_cd_single_container/.travis.yml
+```

@@ -1,0 +1,18 @@
+<title> Fibonacci Calculator </title>
+
+<h2>Fibonacci Calculator</h2>
+
+<form>
+    {{ index_form.fib_index.label }} {{ index_form.fib_index }}
+    <input type="submit" name="fib_submit">
+</form>
+
+<br>
+
+<b>Indices I have seen:</b>
+<br>
+{{ table_indices }}
+<br>
+<b>Calculated Values:</b>
+<br><br>
+{{ table_values }}
