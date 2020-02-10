@@ -11,5 +11,5 @@ RUN pip install --upgrade pip && \
 COPY ./ ./
 
 # start the api
-#["gunicorn", "--bind", "0.0.0.0:5000", "web_index:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app_client:app"]
 
