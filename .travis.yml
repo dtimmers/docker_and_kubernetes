@@ -10,4 +10,4 @@ script:
   - docker run dennistimmers/client_test python test/unit_test.py
 
 after_success:
-  - ./sh/push_images.sh
+  - sh sh/push_images.sh

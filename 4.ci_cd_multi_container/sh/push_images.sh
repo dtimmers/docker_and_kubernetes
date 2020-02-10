@@ -12,4 +12,6 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
   docker push dennistimmers/multi_client
   docker push dennistimmers/multi_nginx
   docker push dennistimmers/multi_worker
+else
+  echo "images not pushed because we are on branch "${TRAVIS_BRANCH}
 fi
