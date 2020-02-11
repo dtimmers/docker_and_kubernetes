@@ -1,4 +1,3 @@
-# need pg_info binary
 FROM python:3.7-slim-buster
 
 WORKDIR /usr/app
@@ -10,3 +9,6 @@ RUN pip install --upgrade pip && \
 
 # copy over the flask api definition
 COPY ./ ./
+
+# start the api
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app_api:app"]

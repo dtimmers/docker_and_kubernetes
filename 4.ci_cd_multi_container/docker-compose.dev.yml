@@ -13,6 +13,7 @@ services:
   api:
     build:
       context: services/api
+      dockerfile: Dockerfile.dev
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -28,6 +29,7 @@ services:
   client:
     build:
       context: services/client
+      dockerfile: Dockerfile.dev
     environment:
       - API_HOST=nginx
       - API_PREFIX=api
