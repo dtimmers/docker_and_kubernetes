@@ -11,3 +11,17 @@ script:
 
 after_success:
   - bash sh/push_images.sh
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-1'
+  app: 'multi_docker'
+  env: 'MultiDocker-env'
+  bucket_name: 'elasticbeanstalk-eu-west-1-419908496760'
+  bucket_path: 'multi_docker'
+  on:
+    branch: master
+  access_key_id:
+    secure: $AWS_ACCESS_ID
+  secret_access_key:
+    secure: $AWS_SECRET_KEY

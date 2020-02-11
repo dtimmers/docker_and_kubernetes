@@ -1,0 +1,37 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "dennistimmers/multi_api",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "client",
+      "image": "dennistimmers/multi_client",
+      "hostname": "client",
+      "essential": false,
+      "links": ["nginx"]
+    },
+    {
+      "name": "nginx",
+      "image": "dennistimmers/multi_nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["api", "client"]
+    },
+    {
+      "name": "worker",
+      "image": "dennistimmers/multi_worker",
+      "hostname": "worker",
+      "essential": false
+    }
+  ]
+}
