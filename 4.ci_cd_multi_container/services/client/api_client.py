@@ -6,8 +6,8 @@ class APIConfig(object):
 
     def __init__(self):
         host = os.environ['API_HOST']
-        port = os.environ['API_PORT']
-        self.host_url = f'http://{host}:{port}'
+        slug_prefix = os.environ['API_PREFIX']
+        self.url_prefix = f'http://{host}/{slug_prefix}'
         self.slug_values_all = f'values/all'
         self.slug_indices_all = f'indices/all'
         self.slug_indices_insert = f'indices/insert'
@@ -19,7 +19,7 @@ class APIClient:
         self.config = api_config
 
     def build_url(self, slug: str):
-        return f'{self.config.host_url}/{slug}'
+        return f'{self.config.url_prefix}/{slug}'
 
     def get_all_values(self):
         url = self.build_url(self.config.slug_values_all)

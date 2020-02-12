@@ -31,8 +31,8 @@ services:
       context: services/client
       dockerfile: Dockerfile.dev
     environment:
-      - API_HOST=api
-      - API_PORT=5000
+      - API_HOST=nginx
+      - API_PREFIX=api
 
   nginx:
     restart: always
