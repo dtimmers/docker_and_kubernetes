@@ -11,4 +11,4 @@ RUN pip install --upgrade pip && \
 COPY ./ ./
 
 # start the api
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app_api:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--log-level", "debug", "app_api:app"]
