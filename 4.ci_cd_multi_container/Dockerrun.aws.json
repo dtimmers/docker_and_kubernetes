@@ -13,7 +13,8 @@
       "image": "dennistimmers/multi_client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "links": ["api"]
     },
     {
       "name": "nginx",
@@ -22,11 +23,11 @@
       "essential": true,
       "portMappings": [
         {
-          "hostPort": 5050,
+          "hostPort": 80,
           "containerPort": 80
         }
       ],
-      "links": ["api", "client"],
+      "links": ["client"],
       "memory": 128
     },
     {
