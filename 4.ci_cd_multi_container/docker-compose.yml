@@ -45,7 +45,6 @@ services:
   worker:
     build:
       context: ./services/worker
-    command: ["python", "-u", "worker.py"]
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
