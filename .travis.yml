@@ -15,10 +15,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'eu-west-1'
-  app: 'multi_docker'
-  env: 'MultiDocker-env'
+  app: 'multi-docker'
+  env: 'MultiDocker-env-1'
   bucket_name: 'elasticbeanstalk-eu-west-1-419908496760'
-  bucket_path: 'multi_docker'
+  bucket_path: 'multi-docker'
   on:
     branch: master
   access_key_id:
