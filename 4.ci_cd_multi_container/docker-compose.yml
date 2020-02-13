@@ -13,6 +13,7 @@ services:
   api:
     build:
       context: services/api
+      dockerfile: Dockerfile.dev
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -28,9 +29,10 @@ services:
   client:
     build:
       context: services/client
+      dockerfile: Dockerfile.dev
     environment:
-      - API_HOST=nginx
-      - API_PREFIX=api
+      - API_HOST=api
+      - API_PORT=5000
 
   nginx:
     restart: always
@@ -43,7 +45,6 @@ services:
   worker:
     build:
       context: ./services/worker
-    command: ["python", "-u", "worker.py"]
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379

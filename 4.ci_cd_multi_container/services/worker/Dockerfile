@@ -10,3 +10,5 @@ RUN pip install --upgrade pip && \
 
 # copy over the listener definition
 COPY ./ ./
+
+CMD ["python", "-u", "worker.py"]

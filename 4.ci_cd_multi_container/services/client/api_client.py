@@ -6,8 +6,8 @@ class APIConfig(object):
 
     def __init__(self):
         host = os.environ['API_HOST']
-        slug_prefix = os.environ['API_PREFIX']
-        self.url_prefix = f'http://{host}/{slug_prefix}'
+        port = os.environ['API_PORT']
+        self.url_prefix = f'http://{host}:{port}'
         self.slug_values_all = f'values/all'
         self.slug_indices_all = f'indices/all'
         self.slug_indices_insert = f'indices/insert'
